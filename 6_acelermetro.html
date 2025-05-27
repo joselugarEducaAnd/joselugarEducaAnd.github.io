@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_lightbox.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6. Acelerómetro | Introducción a la robótica con Micro:bit </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Varios" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_lightbox.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="udl-content.css" />
+<script type="text/javascript" src="udl-content.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/empheq'],load: ['[tex]/textmacros'],load: ['[tex]/color'],load: ['[tex]/cancel']}
+  tex: {
+    tags: "ams",
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    packages: {'[+]': ['empheq']},
+    packages: {'[+]': ['textmacros']},
+    packages: {'[+]': ['color']},
+    packages: {'[+]': ['cancel']},
+    autoload: {empheq: [[], ['empheq']]}
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script">
+</script>
+
+<script type="text/javascript" async
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+     </script></head>
+<body class="exe-web-site" id="exe-node-66"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Introducción a la robótica con Micro:bit</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Introducción a la robótica con Micro:bit</a></li>
+   <li><a href="1_introduccin_a_la_robtica.html" class="no-ch">1. Introducción a la robótica</a></li>
+   <li><a href="2__funcionamiento_de_los_robots.html" class="no-ch">2 . Funcionamiento de los robots</a></li>
+   <li><a href="3_introduccin_a_nuestra_placa_microbit.html" class="no-ch">3. Introducción a nuestra placa Micro:bit</a></li>
+   <li class="current-page-parent"><a href="4_aprendiendo_a_programar_microbit.html" class="current-page-parent daddy">4. Aprendiendo a programar Micro:bit</a>
+   <ul>
+      <li><a href="1_matriz_led.html" class="no-ch">1. Matriz LED</a></li>
+      <li><a href="2_pulsadores.html" class="no-ch">2. Pulsadores</a></li>
+      <li><a href="3_sensor_de_temperatura.html" class="no-ch">3. Sensor de temperatura</a></li>
+      <li><a href="4_sensor_de_luz.html" class="no-ch">4. Sensor de luz</a></li>
+      <li><a href="5_sensor_magntico.html" class="no-ch">5. Sensor magnético</a></li>
+      <li id="active"><a href="6_acelermetro.html" class="active no-ch">6. Acelerómetro</a></li>
+      <li><a href="7_comunicacin_por_radio.html" class="no-ch">7. Comunicación por radio</a></li>
+   </ul>
+   </li>
+   <li><a href="5programando_tu_placa_real.html" class="no-ch">5-Programando tu placa real</a></li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="5_sensor_magntico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>11</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="7_comunicacin_por_radio.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6. Acelerómetro</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id521">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Prácticas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta521_521_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Un <span style="color: #008000;"><strong>acelerómetro</strong></span> es un <span style="color: #008000;"><strong>sensor</strong> <strong>que mide las aceleraciones</strong></span> de un cuerpo, la <span style="color: #008000;"><strong>fuerza</strong></span> generada por una vibración o el <span style="color: #008000;"><strong>cambio en el movimiento</strong></span> de un cuerpo.</p>
+<p>Una aplicación de este sistema se encuentra en los <span style="color: #008000;"><strong>airbag</strong></span> de los automóviles. Cuando se frena de forma brusca, el sensor</p>
+<p>detecta una desaceleración fuerte, haciendo que se despliegue el airbag.</p>
+<p>También se usa para medir los pasos en los relojes de actividad y en smartphones.</p>
+<p>Micro:bit lleva incorporado un acelerómetro en el mismo chip que el sensor magnético, es decir, en el círculo rojo que ves en esta imagen:</p>
+<p><img src="sensor_mag_y_accel.png" alt="" width="400" height="316" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Este acelerómetro se encarga de medir las aceleraciones a las que puede estar sometida la placa, tales como cuando se gira, se sacude o se cae.</p>
+<p>Para usar el valor del acelerómetro en nuestros programas, usaremos un bloque de evento de MakeCode que se llama <strong><span style="background-color: #d301d4; color: #ffffff;">si agitado</span></strong>:</p>
+<p><img src="bloq_si_agitado.png" alt="" width="158" height="113" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Los bloques que metamos ahí se ejecutarán <span style="color: #008000;"><strong>cuando se agite la placa</strong></span>. Sin embargo, <span style="color: #008000;"><strong>el acelerómetro nos permite detectar muchos más movimientos,</strong> </span>no solo la agitación. Si pulsas la flechita del bloque, se despliega un menú con todas las opciones que podemos detectar gracias al acelerómetro:</p>
+<p><img src="tipos_acelerometro.png" alt="" width="775" height="439" style="display: block; margin-left: auto; margin-right: auto;">&nbsp;</p>
+<p>Para simular los diferentes movimientos de la placa cuando pruebas tu programa en la placa virtual de MakeCode, aparece un control. Si, por ejemplo, utilizas el bloque tal cual (<strong><span style="background-color: #d301d4; color: #ffffff;">si agitado</span></strong>), aparece un botón blanco junto al que pone "SHAKE" y, al pulsarlo, será como si agitaras la placa.</p>
+<p><img src="shake.png" alt="" width="388" height="323" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Vamos a ver algunos ejemplos de uso del acelerómetro en prácticas guiadas, antes de hacer la tarea de este sensor. De paso, vas a practicar el uso de variables en MakeCode.</p>
+<div class="exe-fx exe-paginated">
+<h2>Práctica 1 - Bola 8</h2>
+<p>En esta práctica, se va a realizar un programa que emule un juego en el que al mover la placa nos ofrezca una respuesta, al azar, a una pregunta. Se basa en el juego “Bola 8 mágica”.</p>
+<p>Es un divertido proceso de predicción que responde a tus preguntas. Hazle a tu bola mágica cualquier pregunta y te responderá más o menos claramente.</p>
+<p>El programa funcionará de la siguiente manera:</p>
+<ul>
+<li>Agitamos la placa (nuestra "bola 8") mientras hacemos una pregunta.</li>
+<li>La placa nos ofrecerá tres respuestas, elegidas al azar:
+<ul>
+<li>Un tic para decir Sí&nbsp;<img src="pra61tick.png" alt="" width="113" height="32"></li>
+<li>Una equis para decir No&nbsp;<img src="pra61X.png" alt="" width="116" height="34"></li>
+<li>Una cara neutra que nos indica que no está segura de la respuesta&nbsp;<img src="pra61neutro.png" alt="" width="114" height="33"></li>
+</ul>
+</li>
+</ul>
+<p>Para saber qué icono mostrar cuando se agite la placa, haremos lo siguiente:</p>
+<ul>
+<li>Cuando se agite la placa, elegiremos un número al azar&nbsp;del 1 al 3.</li>
+<li>Guardaremos ese número en una variable que habremos creado con el nombre de "<span style="color: #008000;"><strong>Pregunta</strong></span>"</li>
+<li>Preguntaremos el valor de la variable "Pregunta" (con bloque <strong><span style="background-color: #00a4a6; color: #ffffff;">si entonces</span></strong>) y, según sea el valor, mostraremos en la pantalla el icono correspondiente:
+<ul>
+<li>Valor 1: Sí</li>
+<li>Valor 2: No</li>
+<li>Valor 3: Indefinido</li>
+</ul>
+</li>
+</ul>
+<p>¿Te ves capaz de escribir el código por tus propios medios? Te doy una ayuda para crear la variable.</p>
+<p>Si pulsas en la categoría "Variables", verás que tienes un botón para crear una variable nueva:</p>
+<p><img src="crear_variable.png" alt="" width="390" height="534" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Cuando pulses ese botón te aparecerá una ventana para escribir el nombre que le quieres dar a la variable. En este caso, se llamará "Pregunta":</p>
+<p><img src="nombrar_variable.png" alt="" width="501" height="215" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Cuando pulses en "Aceptar" habrás creado la variable y, a partir de ese momento, tendrás disponibles tres nuevos bloques para utilizar la variable en tu programa:</p>
+<p><img src="opciones_variables.png" alt="" width="792" height="357" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Si tienes problemas con el código, aquí tienes la solución de esta práctica, como siempre:</p>
+<p><a href="pra61.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a>Y aquí un ejemplo de funcionamiento utilizando el botón SHAKE para simular que agitamos la placa:</p>
+<p><img src="bola_8.gif" alt="" width="402" height="322" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h2>Práctica 2 - Contador automático</h2>
+<p>Vamos a hacer un programa que sirva para contar cosas. El funcionamiento debe ser el siguiente:</p>
+<ul>
+<li>
+<p>Al empezar el proceso se muestra en la matriz LED el número 0.</p>
+</li>
+<li>
+<p>Cada vez que se agite la placa micro:bit, debe aumentar en uno el valor del número mostrado en el LED. Es decir, cada sacudida suma 1 al valor anterior.</p>
+</li>
+<li>
+<p>Cuando se llegue al número 9, la placa debe de mostrar un icono durante dos segundos.</p>
+</li>
+<li>
+<p>Después, iniciar de nuevo la cuenta en 0.</p>
+</li>
+</ul>
+<p>Te doy algunas pistas para que intentes hacer el programa por tu cuenta, a ver si lo consigues.</p>
+<p>Para hacer el programa utilizaremos una variable llamada "Contador". Al iniciar, le daremos el valor "0" a esta variable.</p>
+<p>Cada vez que se agite la placa, preguntaremos si "Contador" ya vale "9". Según sea la respuesta haremos lo siguiente:</p>
+<ul>
+<li>Si vale "9" mostraremos en la matriz LED un icono cualquiera durante dos segundos y le daremos a la variable el valor "0".</li>
+<li>Si no vale "9", le sumaremos 1 al valor que tuviera anteriormente "Contador".</li>
+<li>En cualquier caso, mostraremos en la pantalla el valor de "Contador"</li>
+</ul>
+<p>Con estos pasos, conseguirás que el programa funcione como queremos, que sería así:</p>
+<p><img src="contador_automatico.gif" alt="" width="402" height="322" style="display: block; margin-left: auto; margin-right: auto;">Como siempre, aquí tienes el programa solución de esta práctica, por si tienes problemas:</p>
+<p><a href="pra62.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+</div></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id522">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Tarea 6</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta522_522_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Para hacer esta tarea tienes que hacer un programa que te sirva de podómetro, es decir, que cuente los pasos que das mientras llevas contigo la placa. Crea un nuevo proyecto llamado "<span style="color: #008000;"><strong>TAREA6-NOMBRE Y APELLIDOS</strong></span>".</p>
+<p>Para que la tarea esté perfectamente realizada, el programa deba hacer lo siguiente:</p>
+<ul>
+<li>Debe ir contando los pasos que se vayan dando, suponiendo que, en cada paso que das, se ejecuta un evento del tipo <strong><span style="background-color: #d301d4; color: #ffffff;">si agitado</span></strong>. Los pasos guárdalos en una variable llamada "Pasos", pero <span style="color: #008000;"><strong>no los muestres de momento</strong></span>. Recuerda lo que has aprendido en la práctica 2, que te puede ayudar mucho.</li>
+<li>Cuando pulsemos el <span style="color: #008000;"><strong>botón "A"</strong> </span>de la placa, se deben mostrar en la matriz de LEDs los pasos que llevemos hasta ese momento. Los pasos se mostrarán durante 3 segundos y, después, <span style="color: #008000;"><strong>la pantalla se quedará apagada.</strong></span></li>
+<li>Si pulsamos los <span style="color: #008000;"><strong>botones "A" y "B" a la vez</strong></span>, se debe resetear la cuenta de pasos. Es decir, la variable "Pasos" debe tomar el <span style="color: #008000;"><strong>valor "0"</strong></span>. <em>Como un extra para subir nota, intenta que la placa emita un sonido al resetearse los pasos. Investiga en los bloques de la categoría "Música" para ver si eres capaz de hacerlo.</em></li>
+<li><span style="color: #008000;"><strong>Comparte</strong></span> tu proyecto cuando termines y añade su enlace a la tarea de <span style="color: #008000;"><strong>Google Classroom.</strong></span></li>
+</ul></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="5_sensor_magntico.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>11</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="7_comunicacin_por_radio.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

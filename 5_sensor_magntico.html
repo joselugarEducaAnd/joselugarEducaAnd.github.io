@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_lightbox.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5. Sensor magnético | Introducción a la robótica con Micro:bit </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Varios" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_lightbox.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="udl-content.css" />
+<script type="text/javascript" src="udl-content.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/empheq'],load: ['[tex]/textmacros'],load: ['[tex]/color'],load: ['[tex]/cancel']}
+  tex: {
+    tags: "ams",
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    packages: {'[+]': ['empheq']},
+    packages: {'[+]': ['textmacros']},
+    packages: {'[+]': ['color']},
+    packages: {'[+]': ['cancel']},
+    autoload: {empheq: [[], ['empheq']]}
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script">
+</script>
+
+<script type="text/javascript" async
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+     </script></head>
+<body class="exe-web-site" id="exe-node-65"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Introducción a la robótica con Micro:bit</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Introducción a la robótica con Micro:bit</a></li>
+   <li><a href="1_introduccin_a_la_robtica.html" class="no-ch">1. Introducción a la robótica</a></li>
+   <li><a href="2__funcionamiento_de_los_robots.html" class="no-ch">2 . Funcionamiento de los robots</a></li>
+   <li><a href="3_introduccin_a_nuestra_placa_microbit.html" class="no-ch">3. Introducción a nuestra placa Micro:bit</a></li>
+   <li class="current-page-parent"><a href="4_aprendiendo_a_programar_microbit.html" class="current-page-parent daddy">4. Aprendiendo a programar Micro:bit</a>
+   <ul>
+      <li><a href="1_matriz_led.html" class="no-ch">1. Matriz LED</a></li>
+      <li><a href="2_pulsadores.html" class="no-ch">2. Pulsadores</a></li>
+      <li><a href="3_sensor_de_temperatura.html" class="no-ch">3. Sensor de temperatura</a></li>
+      <li><a href="4_sensor_de_luz.html" class="no-ch">4. Sensor de luz</a></li>
+      <li id="active"><a href="5_sensor_magntico.html" class="active no-ch">5. Sensor magnético</a></li>
+      <li><a href="6_acelermetro.html" class="no-ch">6. Acelerómetro</a></li>
+      <li><a href="7_comunicacin_por_radio.html" class="no-ch">7. Comunicación por radio</a></li>
+   </ul>
+   </li>
+   <li><a href="5programando_tu_placa_real.html" class="no-ch">5-Programando tu placa real</a></li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="4_sensor_de_luz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>10</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="6_acelermetro.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5. Sensor magnético</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id519">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Prácticas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta519_519_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Un <span style="color: #008000;"><strong>sensor magnético</strong></span> es un componente capaz de detectar campos magnéticos externos. Los campos magnéticos pueden ser creador por corrientes eléctricos, por imanes o simplemente ser el campo magnético natural terrestre.</p>
+<p>Una de las grandes aplicaciones de este sensor es para saber la dirección a la que te diriges y de ese modo ayudarte a situarte en el entorno natural en el que te encuentres. Se <span style="color: #008000;"><strong>calibran</strong></span> tomando como referencia el campo magnético terrestre, así, siempre puedes saber en qué dirección se encuentra el Norte, igual que una brújula.</p>
+<p>La placa de Micro:bit incorpora un sensor magnético con el cual podremos obtener información sobre la dirección del norte y las fuerzas magnéticas. Se encuentra ubicado donde se indica en la imagen con el círculo rojo:</p>
+<p><img src="sensor_mag_y_accel.png" width="400" height="316" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>El sensor magnético de Micro:bit puede usarse para dos cosas:</p>
+<ul>
+<li>Medir<strong><span style="color: #008000;"> la fuerza que tiene un campo magnético (en micro teslas -&nbsp;μT)</span></strong>. Es útil para hacer mediciones en montajes con dispositivos electromagnéticos, aunque nosotros no lo usaremos de momento. Se utilizaría directamente este bloque de MakeCode, que nos devuelve el valor de la fuerza en&nbsp;μT:</li>
+</ul>
+<p><img src="bloq_fuerza_magn.png" width="252" height="43" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<ul>
+<li>Dar información de <span style="color: #008000;"><strong>brújula</strong></span>, indicando directamente el ángulo respecto al norte magnético de la Tierra. Se obtiene mediante este bloque de MakeCode:</li>
+</ul>
+<p><img src="bloq_dir_brujula.png" width="258" height="38" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>En esta tarea nos centraremos en este último bloque de brújula, por lo que es importante que tengas en cuenta lo siguiente para saber usarlo bien:</p>
+<p>El ángulo que devuelve ese bloque es el ángulo que forma la placa Micro:bit con la dirección del polo norte magnético (que es aproximadamente la misma que la del norte geográfico). En esta imagen puedes ver los diferentes ángulos que te puede devolver el bloque dirección de la brújula (º) según para donde apunte tu placa:</p>
+<p><img src="angulo_brujula.jpeg" width="500" height="510" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Como siempre, para fijar ideas y ayudarte antes de hacer esta tarea, vamos a hacer algunas prácticas previas:</p>
+<div class="exe-fx exe-paginated">
+<h2>Práctica 1 - Mostrar ángulo de la brújula</h2>
+<p>Esta primera práctica es muy sencilla. Consiste simplemente en mostrar en la pantalla de Micro:bit el ángulo de la brújula y comprobar que varía al mover la placa.</p>
+<p>A estas alturas, ya deberías ser capaz de escribir el programa por tus propios medios, teniendo en cuenta que:</p>
+<ul>
+<li>El ángulo se debe escribir en la matriz LED.</li>
+<li>Debes actualizar todo el tiempo el ángulo, porque puede variar en cualquier instante.</li>
+</ul>
+<p>Para comprobar si has escrito correctamente el programa, tienes que girar la placa y ver que el ángulo varía. Cuando hagas esta práctica con la placa real, solo tendrás que moverla para ver cómo cambia el ángulo y podrás comprobar que, si la apuntas justo hacia el norte, indicará cero grados. Pero, ¿cómo puedes girar la placa virtual que tienes en MakeCode?</p>
+<p>Cuando utilices en tu código el bloque <strong><span style="background-color: #d301d4; color: #ffffff;">dirección de la brújula (º)</span></strong>, automáticamente <span style="color: #008000;"><strong>el icono de la Micro:bit virtual cambiará y le aparecerá una flecha</strong></span>:</p>
+<p><img src="icono_flecha.png" width="83" height="46" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Podrás entonces girar con el ratón el icono y será como si estuvieras girando la placa.&nbsp;</p>
+<p>Como siempre, te dejo aquí el código correcto por si has tenido problemas para escribirlo:</p>
+<p><a href="pra51.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a>Si todo ha ido bien, el funcionamiento debería ser parecido a esto:</p>
+<p><img src="brujula1.gif" width="402" height="322" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<h2>Práctica 2 - Brújula con flecha</h2>
+<p>Para hacer esta segunda práctica, queremos mostrar una flecha hacia arriba en la matriz de LEDs, cuando la placa esté orientada hacia el norte. Si se orienta en cualquier otra dirección, la matriz debe quedar totalmente apagada.</p>
+<p>Para hacer que aparezca una flecha en la pantalla, puedes usar el bloque que te permite dibujar el icono y dibujar una flecha, o puedes usar un bloque de MakeCode que pinta una flecha en la matriz LED: Está en la categoría Básico y es este bloque:</p>
+<p><img src="bloq_flecha.png" width="174" height="43" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Si dejas puesto "Norte", la flecha apuntará hacia arriba, que es justo lo que queremos.</p>
+<p>Cuando la placa apunta justo al norte, el bloque dirección de la brújula (º) valdrá cero. Sin embargo, <span style="color: #008000;"><strong>apuntar justo a cero grados norte es difícil y la flecha sólo aparecería un instante en la pantalla.</strong></span> Para evitar eso, consideraremos que estamos apuntando al norte si el ángulo de la brújula está en una franja de ±10º, como puedes ver en este gráfico:</p>
+<p><img src="zona_norte.jpeg" width="500" height="626" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Por consiguiente, consideraremos que <span style="color: #008000;"><strong>la placa apunta al norte</strong></span> si el ángulo es <span style="color: #008000;"><strong>mayor de 350º</strong> <strong><span style="text-decoration: underline;">o bien</span> es menor de 10º</strong></span>.</p>
+<p>Como tenemos que <span style="color: #008000;"><strong>comprobar</strong></span>&nbsp;(bloque <strong><span style="background-color: #00a4a6; color: #ffffff;">si entonces - si no</span></strong>) si se cumple una condición o la otra, tendremos que usar un bloque que nos devuelve verdadero si una cualquiera de las condiciones que lleva dentro es verdadera. Es este bloque:</p>
+<p><img src="bloq_or.png" width="162" height="47" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>¿Te atreves a escribir el código sin ayuda? Inténtalo y revisa la solución si tienes problemas:</p>
+<p><a href="pra52.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+</div></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id520">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Tarea 5</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta520_520_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Crea un nuevo proyecto llamado "<span style="color: #008000;"><strong>TAREA5-NOMBRE Y APELLIDOS</strong></span>".</p>
+<p>En esta tarea vas a hacer un programa que funcione de la siguiente manera:</p>
+<ul>
+<li>Si la brújula apunta al <span style="color: #008000;"><strong>norte</strong></span> (<span style="color: #008000;"><strong>ángulo ≥ 350º <span style="text-decoration: underline;">o</span> ángulo ≤ 10º</strong></span>), que aparezca en la matriz LED la letra "<span style="color: #008000;"><strong>N</strong></span>".</li>
+<li>Si la brújula apunta al <span style="color: #008000;"><strong>este</strong> <strong>(ángulo ≥ 80º <span style="text-decoration: underline;">y</span> ángulo ≤ 100º)</strong></span>, que aparezca en la matriz LED la letra "<span style="color: #008000;"><strong>E</strong></span>".</li>
+<li>Si la brújula apunta al <span style="color: #008000;"><strong>sur</strong> <strong>(ángulo ≥ 170º <span style="text-decoration: underline;">y</span> ángulo ≤ 190º)</strong></span>, que aparezca en la matriz LED la letra "<span style="color: #008000;"><strong>S</strong></span>".</li>
+<li>Si la brújula apunta al <span style="color: #008000;"><strong>oeste</strong> <strong>(ángulo ≥ 260º <span style="text-decoration: underline;">y</span> ángulo ≤ 280º)</strong></span>, que aparezca en la matriz LED la letra "<span style="color: #008000;"><strong>O</strong></span>".</li>
+</ul>
+<p>En esta imagen tienes un resumen de los ángulos que tienes que tener en cuenta para hacer esta tarea:</p>
+<p><img src="brujula_tarea_5.jpeg" width="500" height="644" style="display: block; margin-left: auto; margin-right: auto;"><em><span style="color: #008000;"><strong>ATENCIÓN:</strong></span></em> fíjate que, <span style="color: #008000;"><strong>para el primer caso, basta con que una sola de las condiciones sea verdadera</strong></span>&nbsp;para estar en el norte. Sin embargo, en los otros casos, <span style="color: #008000;"><strong>es necesario que se cumplan las dos condiciones a la vez</strong></span> para que estemos en el punto cardinal correspondiente.</p>
+<p>Tendrás que usar un bloque <span style="color: #ffffff; background-color: #00a4a6;"><strong>si entonces - si no</strong></span> y añadirle casos para ir preguntando si el ángulo cumple cada una de las cuatro condiciones que te he puesto arriba. Para la primera condición usarás el bloque&nbsp;<img src="bloq_or.png" width="114" height="33">&nbsp;(igual que en la práctica 2) y para las otras tres, el bloque&nbsp;<img src="bloq_and.png" width="115" height="38">&nbsp;(para que que se tengan que cumplir las dos condiciones a la vez).</p>
+<ul>
+<li>Recuerda <span style="color: #008000;"><strong>compartir</strong></span> el proyecto y <span style="color: #008000;"><strong>añadir el enlace a la tarea de Google Classroom.</strong></span></li>
+</ul></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="4_sensor_de_luz.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>10</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="6_acelermetro.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

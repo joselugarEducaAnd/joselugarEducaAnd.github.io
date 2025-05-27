@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2 . Funcionamiento de los robots | Introducción a la robótica con Micro:bit </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Varios" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="udl-content.css" />
+<script type="text/javascript" src="udl-content.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/empheq'],load: ['[tex]/textmacros'],load: ['[tex]/color'],load: ['[tex]/cancel']}
+  tex: {
+    tags: "ams",
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    packages: {'[+]': ['empheq']},
+    packages: {'[+]': ['textmacros']},
+    packages: {'[+]': ['color']},
+    packages: {'[+]': ['cancel']},
+    autoload: {empheq: [[], ['empheq']]}
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script">
+</script>
+
+<script type="text/javascript" async
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+     </script></head>
+<body class="exe-web-site" id="exe-node-58"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Introducción a la robótica con Micro:bit</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Introducción a la robótica con Micro:bit</a></li>
+   <li><a href="1_introduccin_a_la_robtica.html" class="no-ch">1. Introducción a la robótica</a></li>
+   <li id="active"><a href="2__funcionamiento_de_los_robots.html" class="active no-ch">2 . Funcionamiento de los robots</a></li>
+   <li><a href="3_introduccin_a_nuestra_placa_microbit.html" class="no-ch">3. Introducción a nuestra placa Micro:bit</a></li>
+   <li><a href="4_aprendiendo_a_programar_microbit.html" class="daddy">4. Aprendiendo a programar Micro:bit</a>
+   <ul class="other-section">
+      <li><a href="1_matriz_led.html" class="no-ch">1. Matriz LED</a></li>
+      <li><a href="2_pulsadores.html" class="no-ch">2. Pulsadores</a></li>
+      <li><a href="3_sensor_de_temperatura.html" class="no-ch">3. Sensor de temperatura</a></li>
+      <li><a href="4_sensor_de_luz.html" class="no-ch">4. Sensor de luz</a></li>
+      <li><a href="5_sensor_magntico.html" class="no-ch">5. Sensor magnético</a></li>
+      <li><a href="6_acelermetro.html" class="no-ch">6. Acelerómetro</a></li>
+      <li><a href="7_comunicacin_por_radio.html" class="no-ch">7. Comunicación por radio</a></li>
+   </ul>
+   </li>
+   <li><a href="5programando_tu_placa_real.html" class="no-ch">5-Programando tu placa real</a></li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_introduccin_a_la_robtica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>3</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="3_introduccin_a_nuestra_placa_microbit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2 . Funcionamiento de los robots</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id494">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Estructura básica de un robot</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta494_1489_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Como vimos en el apartado anterior, un robot recoge información del medio físico que le rodea (temperatura, luz, sonido, movimiento, etc.). Esto lo realiza mediante unos componentes electrónicos llamados "<span style="color: #008000;"><strong>s</strong><strong>ensores</strong></span>".</p>
+<p>Dependiendo de los parámetros que reciba de su entorno a través de los sensores, puede realizar ciertas acciones (moverse, encender luces, emitir sonidos, etc.). Esto lo puede realizar mediante otro tipo de componentes electrónicos llamados "<span style="color: #008000;"><strong>actuadores</strong></span>".</p>
+<p>El "cerebro" del robot, el que decide lo que tiene que hacer al consultar los sensores es una placa electrónica llamada "<span style="color: #008000;"><strong>controlador</strong></span>" , que contiene el programa que tiene que ejecutar en todo momento, que previamente lo ha introducido un programador. El programa puede ser cambiado para cambiar el funcionamiento del robot cuantas veces se quiera.</p>
+<p>En esta imagen tienes un esquema de cómo funciona básicamente un robot: los <span style="color: #008000;"><strong>sensores</strong></span> le permiten <span style="color: #008000;"><strong>detectar su entorno</strong></span>, el <span style="color: #008000;"><strong>controlador</strong></span> le permite <span style="color: #008000;"><strong>tomar decisiones</strong></span> sobe qué acciones hacer y los <span style="color: #008000;"><strong>actuadores</strong></span> le permiten <span style="color: #008000;"><strong>llevar a cabo las acciones</strong></span> que haya decidido.</p>
+<p><img src="seonsores-actuadores.png" alt="" width="798" height="138" style="display: block; margin-left: auto; margin-right: auto;"></p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id495">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">TAREA 2</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta495_1490_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Imagina que montamos un sistema robótico súper simple, que consiste en:</p>
+<ul>
+<li>Un pulsador como sensor.</li>
+<li>Una tarjeta controladora.</li>
+<li>Un zumbador como actuador.</li>
+</ul>
+<p>El programa de este "robot" sería simplemente lo siguiente:</p>
+<p style="padding-left: 30px;">"Cuando alguien pulse el pulsador, haz sonar el zumbador durante 5 segundos"</p>
+<p><span style="color: #0000ff;">Responde a las siguientes cuestiones en tu hoja de respuesta de Google Classroom:</span></p>
+<p>1 - Realiza un <span style="color: #0000ff;"><strong>esquema</strong></span> de ese robot (sería igual que el que aparece en la sección anterior, pero poniendo "pulsador" y "zumbador" en vez de "sensores" y "actuadores"). <strong>Intenta utilizar las <span style="color: #0000ff;">herramientas de dibujo de los Documentos de Google</span> para hacer el esquema directamente en tu ordenador.</strong> Solo tienes que darle a insertar un dibujo nuevo y te aparecerá el editor de dibujos, donde puedes añadir recuadros, flechas y texto de forma fácil.</p>
+<p><img src="insertar_dibujo.png" alt="" width="600" height="181" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p><strong>2 - ¿Para qué se podría utilizar este circuito?</strong></p>
+<p><strong>3 - Intenta proponer otro programa que se podría meter en este circuito para que funcione de otra manera.</strong></p></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id496">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Hardware y software</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta496_1491_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Hemos visto que para hacer funcionar un robot hacen falta varias cosas, algunas son <span style="color: #008000;"><strong>tangibles</strong></span> como los sensores, la placa controladora y los actuadores y otras son <span style="color: #008000;"><strong>intangibles</strong></span> como los programas y los datos. A las partes físicas y tangibles del robot (que se pueden tocar) se les llama <span style="color: #008000;"><strong>hardware</strong></span>, mientras que las instrucciones lógicas, que no tienen una existencia física que puedas tocar, se le llama <span style="color: #008000;"><strong>software</strong></span>. Por consiguiente:</p>
+<ul>
+<li><span style="color: #008000;"><strong>Hardware:</strong> </span>conjunto de los <span style="color: #008000;"><strong>sensores</strong></span>, la <span style="color: #008000;"><strong>placa controladora</strong></span> y los <span style="color: #008000;"><strong>actuadores</strong></span> del robot.</li>
+<li><span style="color: #008000;"><strong>Software:&nbsp;</strong></span>son los&nbsp;<strong>programas</strong> que controlan el robot, que se encuentran alojados en la memoria del controlador.</li>
+</ul>
+<p>Programamos el software en un ordenador y se lo transmitimos al controlador a través de un cable; de esta forma, el controlador sabe lo que tiene que hacer en cada momento.</p>
+<p>A veces, el robot no actúa como nosotros pensábamos, luego tendremos que revisar el programa, volver a transmitirlo a la controladora y volver a probar su funcionamiento en el robot. A este proceso se le llama "<span style="color: #008000;"><strong>depurar</strong></span>" un programa.</p>
+<p>La placa controladora tiene un microchip llamado "<span style="color: #008000;"><strong>procesador</strong></span>", que se encarga de <span style="color: #008000;"><strong>leer y ejecutar cada línea del programa</strong></span> que hemos introducido en la memoria de la placa.&nbsp;Además, el procesador se encarga de <span style="color: #008000;"><strong>leer los datos de los sensores</strong></span> y de <span style="color: #008000;"><strong>controlar los actuadores</strong></span> conectados a la placa.</p>
+<table border="1" style="width: 100%; border-style: none;">
+<tbody>
+<tr>
+<td style="border: 3px solid purple; border-radius: 10px; border-collapse: collapse; border-style: solid;">
+<p><span style="color: #008000;"><strong>Ejemplo:</strong></span> En este dibujo podemos ver una placa controladora Arduino UNO con un botón y un zumbador conectados a la misma.</p>
+<p><img src="circuito_base.png" alt="" width="400" height="308" style="display: block; margin-left: auto; margin-right: auto;">Dentro de su procesador se almacena el programa que previamente hemos escrito en el ordenador y le hemos enviado a la placa mediante un cable USB.</p>
+<p>Siguiendo el ejemplo de la tarea anterior, al presionar el pulsador, sonará el zumbador durante 5 segundos.</p>
+<p>En cualquier momento, podemos modificar el programa para hacer que funcione de otra manera, por ejemplo, que al presionar el botón, el zumbador suene durante 2 segundos en lugar de 5, o que suene varias veces seguidas, tenemos libertad para hacer lo que queramos.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><span style="color: #008000;">Ejemplos de sensores y actuadores</span></h1>
+<p>Existen muchos tipos de sensores y actuadores.&nbsp;Con un poco de imaginación podemos combinar los sensores y actuadores para construir proyectos interesantes.</p>
+<p>Algunos ejemplos de sensores y actuadores que se pueden conectar a una placa controladora son los siguientes:</p>
+<figure class="exe-figure exe-image float-right license-custom" style="width: 500px;"><img src="sensores_y_actuadores.png" alt="" width="500" height="484"></figure>
+<h4><span style="color: #008000;">Sensores</span></h4>
+<ul>
+<li>Sensor de temperatura</li>
+<li>Sensor de humedad</li>
+<li>Sensor de luz</li>
+<li>Sensor de sonido</li>
+<li>Sensor de gas</li>
+<li>Sensor de presión</li>
+<li>Sensor de movimiento</li>
+<li>Sensor de distancia</li>
+</ul>
+<h4><span style="color: #008000;">Actuadores</span></h4>
+<ul>
+<li>Motores</li>
+<li>Luces (LEDs)</li>
+<li>Relés</li>
+<li>Pantallas</li>
+<li>Altavoces</li>
+</ul>
+<h1><span style="color: #008000;"></span></h1>
+<h1><span style="color: #008000;"></span></h1>
+<h1><span style="color: #008000;">Ejemplos de placas controladoras</span></h1>
+<p>Actualmente, la placa controladora más famosa es <span style="color: #008000;"><strong>Arduino</strong></span>, que fue inventada por un estudiante italiano en el año 2005. Es un sistema abierto (tanto el hardware como el software se pueden copiar libremente), por lo que existen multitud de clones de diferentes precios (y calidad). Esto hace que sea utilizado por millones de personas en todo el mundo, tanto para productos profesionales como para proyectos personales.</p>
+<p>Existen varios modelos de placas Arduino con diferentes especificaciones, todas ellas sencillas de usar y a precios muy asequibles, por lo que son ideales para la enseñanza.</p>
+<p><img src="tipos_arduino.png" alt="" width="801" height="568" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>También existen otros muchos tipos de placas controladoras, pero<span style="color: #008000;"><strong> las que utilizaremos nosotros en Computación y Robótica</strong>&nbsp;</span>son las siguientes:</p>
+<table border="1" style="width: 86.363%; border-collapse: collapse; margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td style="width: 56.095%;">
+<p><span style="color: #008000;"><strong>Micro:bit</strong></span></p>
+<p>La utilizamos en Computación y Robótica en 1º y 2º de ESO</p>
+</td>
+<td style="width: 30.2686%;"><img src="microbitv2.png" width="250" height="236"></td>
+</tr>
+<tr>
+<td style="width: 56.095%;">
+<p><span style="color: #008000;"><strong>Arduino UNO (o compatibles)</strong></span></p>
+<p>La utilizamos en Computación y Robótica en 2º y 3º de ESO</p>
+</td>
+<td style="width: 30.2686%;"><img src="arduino_UNO.png" alt="" width="250" height="237"></td>
+</tr>
+</tbody>
+</table>
+</div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id497">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">TAREA 3 - Responde a las preguntas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta497_1492_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Responde a las siguiente cuestiones <span style="color: #0000ff;">en tu hoja de respuestas de Google Classroom</span>:</p>
+<ol>
+<li>¿Qué son los sensores de un robot?</li>
+<li>¿Qué son los actuadores de un robot?</li>
+<li>¿Qué función tiene la controladora en un robot?</li>
+<li>¿Qué es el hardware de un robot?</li>
+<li>¿Qué es el software de un robot?</li>
+<li>Elige un sensor y un actuador de los ejemplos de la sección anterior y describe un sistema robótico con los mismos. Para ello:</li>
+</ol>
+<ul>
+<li>Dibuja un esquema como el que hiciste en la tarea 2, pero con los nombres de los elementos que hayas elegido.</li>
+<li>Escribe el programa que meterías en la controladora.</li>
+</ul></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id498">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Tipos de robots</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta498_1493_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Actualmente estamos rodeados de robots sin saberlo, como hemos visto antes, no todos los robots tienen forma de humano:</p>
+<p>Podemos clasificar los robots en dos grupos:</p>
+<p><span style="color: #008000;"><strong>Los robots industriales:</strong>&nbsp;</span>se utilizan en la fabricación de objetos, en tareas como la soldadura, pintura, unión de piezas, manejo de materias peligrosas, etc. Suelen tener forma de brazos articulados.</p>
+<div class="exe-layout-2-cols exe-layout-2-50-50 exe-clear">
+<div class="exe-col exe-col-1"><iframe width="560" height="314" src="https://www.youtube.com/embed/Qm9zcFXiXsg" allowfullscreen="allowfullscreen"></iframe></div>
+<div class="exe-col exe-col-2"><iframe width="560" height="314" src="https://www.youtube.com/embed/wgBi1XDzI30" allowfullscreen="allowfullscreen"></iframe></div>
+</div>
+<p><span style="color: #008000;"><strong>Los robots de servicio:</strong> </span>se utilizan para ayudar directamente a las personas, con fines médicos, militares, para entretener, para hacer tareas del hogar, etc.</p>
+<div class="exe-layout-2-cols exe-layout-2-50-50 exe-clear">
+<div class="exe-col exe-col-1"><iframe width="560" height="314" src="https://www.youtube.com/embed/oEh-IGr-4eo" allowfullscreen="allowfullscreen"></iframe></div>
+<div class="exe-col exe-col-2"><iframe width="560" height="314" src="https://www.youtube.com/embed/5zX2LwiT0xA" allowfullscreen="allowfullscreen"></iframe></div>
+</div></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id499">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Aplicaciones de los robots</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta499_1494_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Como hemos visto antes, los robots se utilizan en diversos lugares y además, están siendo introducidos en otros nuevos, como en los coches.</p>
+<p>Las principales aplicaciones de los robots son:</p>
+<table border="0" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 25%; text-align: center;"><img src="aplrob1.png" alt="" width="200" height="106"></td>
+<td style="width: 25%; text-align: center;"><img src="aprob2.jpg" alt="" width="201" height="105"></td>
+<td style="width: 25%; text-align: center;"><img src="aprob3.jpg" alt="" width="200" height="103"></td>
+<td style="width: 25%; text-align: center;"><img src="aprob4.jpg" alt="" width="200" height="101"></td>
+</tr>
+<tr>
+<td style="width: 25%; vertical-align: top;">
+<p><span style="color: #008000;"><strong>Industria</strong></span></p>
+<ul>
+<li>Transporte de materiales</li>
+<li>Montaje</li>
+<li>Corte mecánico, rectificado, desbardado y pulido</li>
+<li>Pintura</li>
+<li>Manipulación de plásticos y otros materiales</li>
+<li>Tareas peligrosas como soldaduras, implementación de sustancias inhalantes nocivas, transporte de materiales pesados.</li>
+<li>Reciclaje</li>
+<li>Medición, inspección, control de calidad</li>
+</ul>
+</td>
+<td style="width: 25%; vertical-align: top;">
+<p><span style="color: #008000;"><strong>Servicios</strong></span></p>
+<ul>
+<li>Transporte robotizado</li>
+<li>Limpieza</li>
+<li>Atención a usuarios</li>
+<li>Entretenimiento</li>
+<li>Vigilancia</li>
+<li>Domótica</li>
+</ul>
+</td>
+<td style="width: 25%; vertical-align: top;">
+<p><span style="color: #008000;"><strong>Medicina</strong></span></p>
+<ul>
+<li>Cirugía asistida</li>
+<li>Telecirugía</li>
+<li>Prótesis motorizadas</li>
+</ul>
+</td>
+<td style="width: 25%; vertical-align: top;">
+<p><span style="color: #008000;"><strong>Otros ámbitos</strong></span></p>
+<ul>
+<li>Exploración espacial</li>
+<li>Exploración del fondo de los océanos</li>
+<li>Desactivación de artefactos explosivos</li>
+<li>Inspección de red de saneamiento</li>
+<li>Agricultura robotizada</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id500">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Ventajas e inconvenientes de los robots</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta500_1495_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Como hemos dicho al principio de este tema, estamos entrando en la "era de los robots", y como todo cambio, tiene defensores y detractores.&nbsp;</p>
+<p>Vamos a analizar brevemente las ventajas e inconvenientes de los robots en la sociedad:<br>&nbsp;<br><span style="color: #008000;"><strong>Ventajas</strong></span></p>
+<ul>
+<li>Capacidad de realizar trabajos complejos y/o peligrosos con precisión.</li>
+<li>Mayor velocidad en la realización de las tareas sin cansarse.</li>
+<li>Se pueden adaptar a nuevos trabajos y/o situaciones cambiando el programa que los gobierna.</li>
+</ul>
+<p><span style="color: #008000;"><strong>Inconvenientes</strong></span></p>
+<ul>
+<li>Sustituyen a las personas, quitándoles el puesto de trabajo.</li>
+<li>Son muy caros y solo se los pueden permitir las grandes empresas</li>
+<li>Pueden ser hackeados para que funcionen mal.</li>
+</ul></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id501">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">TAREA 4 - Responde a las preguntas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta501_1496_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Responde a las siguientes preguntas en tu hoja de respuesta de Google Classroom. No te limites a copiar y pegar las respuestas tal cual, intenta siempre aportar algo por tu cuenta.</p>
+<ol>
+<li>¿Qué aplicaciones tienen los robots industriales?</li>
+<li>¿Qué aplicaciones tienen los robots de servicios?</li>
+<li>¿Qué aplicaciones tienen los robots médicos?</li>
+<li>¿En qué otros ámbitos se utilizan los robots?</li>
+<li>¿Qué ventajas tiene el uso de los robots? Añade alguna que no venga en el tema.</li>
+<li>¿Qué inconvenientes tiene el uso de los robots? Añade alguno que no venga en el tema.</li>
+</ol></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_introduccin_a_la_robtica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>3</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="3_introduccin_a_nuestra_placa_microbit.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>

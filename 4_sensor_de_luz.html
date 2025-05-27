@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_lightbox.css" />
+<link rel="stylesheet" type="text/css" href="exe_effects.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4. Sensor de luz | Introducción a la robótica con Micro:bit </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Varios" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_lightbox.js"></script>
+<script type="text/javascript" src="exe_effects.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="udl-content.css" />
+<script type="text/javascript" src="udl-content.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+window.MathJax = {
+  loader: {load: ['[tex]/empheq'],load: ['[tex]/textmacros'],load: ['[tex]/color'],load: ['[tex]/cancel']}
+  tex: {
+    tags: "ams",
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    packages: {'[+]': ['empheq']},
+    packages: {'[+]': ['textmacros']},
+    packages: {'[+]': ['color']},
+    packages: {'[+]': ['cancel']},
+    autoload: {empheq: [[], ['empheq']]}
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script">
+</script>
+
+<script type="text/javascript" async
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+     </script></head>
+<body class="exe-web-site" id="exe-node-64"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Introducción a la robótica con Micro:bit</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Introducción a la robótica con Micro:bit</a></li>
+   <li><a href="1_introduccin_a_la_robtica.html" class="no-ch">1. Introducción a la robótica</a></li>
+   <li><a href="2__funcionamiento_de_los_robots.html" class="no-ch">2 . Funcionamiento de los robots</a></li>
+   <li><a href="3_introduccin_a_nuestra_placa_microbit.html" class="no-ch">3. Introducción a nuestra placa Micro:bit</a></li>
+   <li class="current-page-parent"><a href="4_aprendiendo_a_programar_microbit.html" class="current-page-parent daddy">4. Aprendiendo a programar Micro:bit</a>
+   <ul>
+      <li><a href="1_matriz_led.html" class="no-ch">1. Matriz LED</a></li>
+      <li><a href="2_pulsadores.html" class="no-ch">2. Pulsadores</a></li>
+      <li><a href="3_sensor_de_temperatura.html" class="no-ch">3. Sensor de temperatura</a></li>
+      <li id="active"><a href="4_sensor_de_luz.html" class="active no-ch">4. Sensor de luz</a></li>
+      <li><a href="5_sensor_magntico.html" class="no-ch">5. Sensor magnético</a></li>
+      <li><a href="6_acelermetro.html" class="no-ch">6. Acelerómetro</a></li>
+      <li><a href="7_comunicacin_por_radio.html" class="no-ch">7. Comunicación por radio</a></li>
+   </ul>
+   </li>
+   <li><a href="5programando_tu_placa_real.html" class="no-ch">5-Programando tu placa real</a></li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="3_sensor_de_temperatura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>9</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="5_sensor_magntico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4. Sensor de luz</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id517">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Prácticas</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta517_517_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Un sensor de luz es un componente electrónico que capta el nivel de luminosidad que existe en su entorno para así medir el nivel de cantidad de luz emitida por un objeto.</p>
+<p>Uno de los elementos electrónico más comunes para detectar luz son las resistencias LDR.</p>
+<p>Una de las aplicaciones más comunes son las farolas, las cuales pueden estar controladas por un sensor de luz, encendiéndose cuando la luminosidad disminuye (cuando llega la noche) y apagándose cuando llega el día, para ahorrar energía.</p>
+<p>Micro:bit utiliza los mismos LEDs de la matriz para funcionar como sensores de luz. El valor de la luz registrada lo tienes disponible en un bloque de MakeCode llamado <span style="color: #ffffff; background-color: #d301d4;"><strong>nivel de luz</strong></span>, que se encuentra, como todos los sensores, en la categoría <span style="color: #d301d4;"><strong>Entrada</strong></span>.</p>
+<p>A diferencia del sensor de temperatura, en el que es muy útil saber el valor numérico de la temperatura, el valor concreto del nivel de luz no nos sirve de mucho (además, el sensor no es demasiado preciso). Lo que nos interesará saber de este sensor es si hay mucha o poca luz, por lo que tendremos que <span style="color: #008000;"><strong>preguntar</strong></span> si su valor es alto o bajo o mediano, etc.</p>
+<p>Para preguntar cosas en programación, utilizamos dos bloques parecidos: el bloque "<strong><span style="color: #ffffff; background-color: #00a4a6;">si <span style="background-color: #008b8d;">verdadero</span> entonces</span></strong>" y el bloque "<span style="color: #ffffff; background-color: #00a4a6;"><strong>si <span style="background-color: #008b8d;">verdadero</span> entonces - si no</strong></span>". Los puedes encontrar en MakeCode en la categoría <span style="color: #00a4a6;"><strong>Lógica</strong></span>.</p>
+<p><img src="buscar_bloques_cond.png" width="501" height="419" style="display: block; margin-left: auto; margin-right: auto;">Estos bloques tienen una condición, que es la forma hexagonal donde pone "verdadero". Esa condición es algo que solo puede tomar dos valores: verdadero o falso:</p>
+<ul>
+<li>Si es <span style="color: #008000;"><strong>verdadero</strong></span>, se ejecutan todos los bloques que hayamos metido donde pone <span style="color: #ffffff; background-color: #00a4a6;"><strong>si <span style="background-color: #008b8d;">verdadero</span> entonces</strong></span>.</li>
+<li>Si es <span style="color: #008000;"><strong>falso</strong></span>, en el caso del primer bloque no se ejecuta nada y en el caso del segundo se ejecuta lo que hayamos metido donde pone <span style="color: #ffffff; background-color: #00a4a6;"><strong>si no</strong></span>.</li>
+</ul>
+<p>Si tienes que comparar varias cosas, puedes usar el botón (+) de estos bloques para preguntar varias cosas una detrás de otra. Si pulsas el botón (+) del bloque&nbsp;<strong><span style="color: #ffffff; background-color: #00a4a6;">si <span style="background-color: #008b8d;">verdadero</span> entonces</span></strong> obtendrás el bloque<span style="color: #ffffff; background-color: #00a4a6;"><strong>si <span style="background-color: #008b8d;">verdadero</span> entonces - si no</strong></span>. Si vuelves a pulsar el botón en este bloque, se añadirá otra condición "si", como puedes ver aquí:</p>
+<p><img src="vasrias_condiciones.png" width="463" height="230" style="display: block; margin-left: auto; margin-right: auto;">Este bloque funcionaría así:</p>
+<ul>
+<li>Si se cumple la condición 1, solo se ejecutarán los bloques que se metan en el <span style="color: #008000;"><strong>primer hueco</strong></span>.</li>
+<li>Si no se cumple la condición 1, se pregunta por la 2:
+<ul>
+<li>Si se cumple la condición 2, solo se ejecutarán los bloques que se metan en el <span style="color: #008000;"><strong>segundo hueco</strong></span>.</li>
+<li>Si no se cumple la condición 2, sólo se ejecutará los bloques que se metan en el <span style="color: #008000;"><strong>tercer hueco</strong></span>.</li>
+</ul>
+</li>
+</ul>
+<p>Fíjate que sólo se pregunta por la condición 2 si no se cumple la 1. Si la 1 es verdadera, ya no se pregunta nada más.</p>
+<p>Puedes usar diferentes <span style="color: #008000;"><strong>bloques de tipo condición</strong></span>, pero los más usados son los <span style="color: #008000;"><strong>bloques comparadores</strong></span>&nbsp;y los <span style="color: #008000;"><strong>booleanos</strong></span>. Los puedes encontrar en la categoría Lógica y se muestran aquí, indicándose cuándo devuelven el valor "verdadero" (o "falso"):</p>
+<p><img src="func_bloques_comp.png" width="949" height="506" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Si despliegas la flecha de cualquier <span style="color: #008000;"><strong>bloque de comparación</strong></span>, puedes encontrar cualquier tipo de comparación que necesites:</p>
+<p><img src="tipos_comp.png" width="113" height="191" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Vamos a practicar con el bloque de nivel de luz y con estos bloques de comparación.</p>
+<div class="exe-fx exe-paginated">
+<h2>Práctica 1 - Nivel de luz sobre la placa</h2>
+<p>Para aprender a usar el bloque <strong><span style="background-color: #d301d4; color: #ffffff;">nivel de luz</span></strong> y a probar su funcionamiento, vamos a hacer una práctica muy simple que consiste en mostrar en la matriz de LEDs el valor numérico del nivel de luz medido por la placa.</p>
+<p>Cuando utilices la placa real, podrás modificar el nivel de luz tapando la matriz de luz o iluminándola por ejemplo con tu móvil, pero para simular la luz que le da a la placa virtual tienes un <span style="color: #008000;"><strong>control que aparece si utilizas en tu código el bloque</strong></span> <span style="color: #ffffff; background-color: #d301d4;"><strong>nivel de luz</strong></span>&nbsp;y que puedes arrastrar para ir variando:</p>
+<p><img src="sim_ilumin.png" width="400" height="330" style="display: block; margin-left: auto; margin-right: auto;">En esta práctica tienes que comprobar que <span style="color: #008000;"><strong>el valor que sale en pantalla es el mismo que aparece en el deslizador cuando lo modificas tú a mano.</strong></span> Para que la placa esté todo el tiempo midiendo la luz, el código hay que meterlo en el bloque <strong><span style="background-color: #1c90ff; color: #ffffff;">para siempre</span></strong>.</p>
+<p>Si lo haces bien, tiene que funcionar así:</p>
+<p><img src="nivel_de_luz.gif" width="402" height="322" style="display: block; margin-left: auto; margin-right: auto;"></p>
+<p>Te dejo el código completo de esta práctica por si tienes dificultades haciéndola:&nbsp; &nbsp;</p>
+<p><a href="pra41.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+<p>Práctica 2 - Comparar números</p>
+<p>Para esta práctica vamos a tomar el nivel de luminosidad y, según sea su valor, vamos a mostrar en la pantalla lo siguiente:</p>
+<ul>
+<li>Poca luz (nivel menor de 55): letra "<span style="color: #008000;"><strong>B</strong></span>" (de "bajo")</li>
+<li>Mucha luz (nivel mayor de 200): letra "<span style="color: #008000;"><strong>A</strong></span>" (de "alto")</li>
+<li>Valores intermedios: letra "<span style="color: #008000;"><strong>M</strong></span>" (de "mediano")</li>
+</ul>
+<p>Para ello, además del bloque nivel de luz, tendremos que utilizar los bloques para preguntar y los bloques comparadores. A ver si eres capaz de hacerlo por tus propios medios. Si lo has hecho bien, debería funcionar así:</p>
+<p><img src="niveles_luz_varios.gif" width="402" height="322" style="display: block; margin-left: auto; margin-right: auto;">Aquí tienes el código completo por si no has sido capaz de hacerlo:</p>
+<p><a href="pra42.png" rel="lightbox"><img src="incognito.png" alt="" width="250" height="195" style="display: block; margin-left: auto; margin-right: auto;"></a></p>
+</div></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id518">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Tarea 4</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta518_518_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Esta tarea es <span style="color: #008000;"><strong>muy parecida a la práctica 2</strong></span>. <span style="color: #008000;"><strong>Asegúrate de haberla entendido bien antes de hacerla.</strong></span></p>
+<p>Crea un nuevo proyecto de MakeCode llamado "T<span style="color: #008000;"><strong>AREA4_NOMBRE Y APELLIDOS</strong></span>".</p>
+<p>Vamos a simular una luz que debe ser muy intensa cuando hay oscuridad, debe apagarse cuando hay mucha luz y debe brillar de forma intermedia el resto del tiempo. Para ello, tienes que escribir un programa que funcione de la siguiente manera:</p>
+<ul>
+<li>Si el nivel de luz <span style="color: #008000;"><strong>es</strong> <strong>inferior a 60</strong></span>, tienes que <span style="color: #008000;"><strong>iluminar todos los LEDs</strong></span> de la matriz.
+<ul>
+<li>Si no se cumple lo anterior (porque es mayor de 60), y <span style="color: #008000;"><strong>es&nbsp;</strong><strong>inferior a 120</strong></span>, tienes que <span style="color: #008000;"><strong>iluminar un cuadrado central de 3x3 LEDs</strong></span>.
+<ul>
+<li>Si no se cumple lo anterior (porque es mayor de 120), y <span style="color: #008000;"><strong>es</strong></span>&nbsp;<span style="color: #008000;"><strong>inferior a 180</strong></span>, tienes que <span style="color: #008000;"><strong>iluminar únicamente el LED del centro de la matriz.</strong></span>
+<ul>
+<li>Si no se cumple lo anterior (porque es mayor de 180) tienes que <span style="color: #008000;"><strong>apagar todos los LEDs</strong></span> de la matriz.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color: #008000;"><strong>Comparte</strong></span> tu proyecto y <span style="color: #008000;"><strong>añade el enlace</strong></span> a la tarea de Google Classroom.</li>
+</ul></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="3_sensor_de_temperatura.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><span class="page-counter">Página <strong>9</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="5_sensor_magntico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>Creado con eXeLearning<span> (Ventana nueva)</span></span></a></p><script type="text/javascript" src="_style_js.js"></script></body></html>
