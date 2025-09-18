@@ -5,12 +5,11 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>Introducción a la robótica con Micro:bit </title>
+<title>1. Principios generales de máquinas | 1. Principios generales de máquinas </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<meta name="author" content="Varios" />
-<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" />
-<meta name="generator" content="eXeLearning 2.8.1 - exelearning.net" />
-<meta name="description" content="REA de la asignatura de Computación y Robótica para 1º-2º de ESO sobre robótica y programación de Micro:bit" />
+<meta name="author" content="José Luis García Jiménez" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.9 - exelearning.net" />
 <!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript" src="common_i18n.js"></script>
@@ -18,80 +17,153 @@
 <link rel="stylesheet" type="text/css" href="udl-content.css" />
 <script type="text/javascript" src="udl-content.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<script>
-window.MathJax = {
-  loader: {load: ['[tex]/empheq'],load: ['[tex]/textmacros'],load: ['[tex]/color'],load: ['[tex]/cancel']}
-  tex: {
-    tags: "ams",
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true,
-    packages: {'[+]': ['empheq']},
-    packages: {'[+]': ['textmacros']},
-    packages: {'[+]': ['color']},
-    packages: {'[+]': ['cancel']},
-    autoload: {empheq: [[], ['empheq']]}
-  },
-  options: {
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
-  }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
 </script>
 
-<script type="text/javascript" async
-     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-     </script></head>
-<body class="exe-web-site" id="exe-node-0"><script type="text/javascript">document.body.className+=" js"</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=default">
+</script></head>
+<body class="exe-web-site" id="exe-node-24"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
-<header id="header" ><div id="headerContent">Introducción a la robótica con Micro:bit</div></header>
+<header id="header" ><div id="headerContent">1. Principios generales de máquinas</div></header>
 <nav id="siteNav">
 <ul>
-   <li id="active"><a href="index.html" class="active daddy main-node">Introducción a la robótica con Micro:bit</a></li>
-   <li><a href="1_introduccin_a_la_robtica.html" class="no-ch">1. Introducción a la robótica</a></li>
-   <li><a href="2__funcionamiento_de_los_robots.html" class="no-ch">2 . Funcionamiento de los robots</a></li>
-   <li><a href="3_introduccin_a_nuestra_placa_microbit.html" class="no-ch">3. Introducción a nuestra placa Micro:bit</a></li>
-   <li><a href="4_aprendiendo_a_programar_microbit.html" class="daddy">4. Aprendiendo a programar Micro:bit</a>
-   <ul class="other-section">
-      <li><a href="1_matriz_led.html" class="no-ch">1. Matriz LED</a></li>
-      <li><a href="2_pulsadores.html" class="no-ch">2. Pulsadores</a></li>
-      <li><a href="3_sensor_de_temperatura.html" class="no-ch">3. Sensor de temperatura</a></li>
-      <li><a href="4_sensor_de_luz.html" class="no-ch">4. Sensor de luz</a></li>
-      <li><a href="5_sensor_magntico.html" class="no-ch">5. Sensor magnético</a></li>
-      <li><a href="6_acelermetro.html" class="no-ch">6. Acelerómetro</a></li>
-      <li><a href="7_comunicacin_por_radio.html" class="no-ch">7. Comunicación por radio</a></li>
-   </ul>
-   </li>
-   <li><a href="5programando_tu_placa_real.html" class="no-ch">5-Programando tu placa real</a></li>
-   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+   <li id="active"><a href="index.html" class="active daddy main-node">1. Principios generales de máquinas</a></li>
+   <li><a href="trabajo.html" class="no-ch">Trabajo</a></li>
+   <li><a href="potencia.html" class="no-ch">Potencia</a></li>
+   <li><a href="energa.html" class="no-ch">Energía</a></li>
+   <li><a href="rendimiento.html" class="no-ch">Rendimiento</a></li>
 </ul>
 </nav>
 <div id='topPagination'>
 <nav class="pagination noprt">
-<span class="page-counter">Página <strong>1</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="1_introduccin_a_la_robtica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+<a href="trabajo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 <div id="main-wrapper">
 <section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">Introducción a la robótica con Micro:bit</h1></header>
-<article class="iDevice_wrapper UDLcontentIdevice" id="id97">
+<header id="nodeDecoration"><h1 id="nodeTitle">1. Principios generales de máquinas</h1></header>
+<article class="iDevice_wrapper UDLcontentIdevice" id="id127">
 <div class="iDevice emphasis0" >
-<div id="ta97_609_2" class="block iDevice_content">
-<div class="exe-udlContent exe-udlContent-representation"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p><img src="Computacion_y_Robotica_1_ESO.png" alt="Portada REA Robótica" title="Portada REA Robótica" style="display: block; margin-left: auto; margin-right: auto;" width="720" height="360"></p></div></div></section></div>
+<div id="ta127_120_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-engagement"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p>Podemos definir una <span style="color: #008000;"><strong>máquina</strong></span> como un <span style="color: #008000;"><strong>conjunto de piezas o elementos</strong></span> que, actuando juntos, nos permiten <span style="color: #008000;"><strong>aprovechar la energía</strong></span> para <span style="color: #008000;"><strong>realizar un trabajo útil</strong></span> y obtener un beneficio.</p>
+<p>Es decir, el concepto de máquina está ligado a la realización de <span style="color: #008000;"><strong>trabajo útil</strong></span>.</p>
+<p>Se denominan <span style="color: #008000;"><strong>máquinas simples</strong> </span>a los <span style="color: #008000;"><strong>dispositivos elementales</strong></span> que se encuentran en casi todas las máquinas. Serían:</p>
+<ul>
+<li>la palanca</li>
+<li>la polea</li>
+<li>el torno</li>
+<li>el plano inclinado</li>
+<li>el tornillo</li>
+<li>la cuña.</li>
+</ul>
+<p>En esta sección vamos a repasar las magnitudes fundamentales de las máquinas, que ya vimos el año pasado:</p>
+<ul>
+<li><a href="trabajo.html">Trabajo</a></li>
+<li><a href="potencia.html">Potencia</a></li>
+<li><a href="energa.html">Energía</a></li>
+<li><a href="rendimiento.html">Rendimiento</a></li>
+</ul>
+<div id="gtx-trans" style="position: absolute; left: 250px; top: 471px;">
+<div class="gtx-trans-icon"></div>
+</div></div></div></section></div>
 </div>
 </div>
 </article>
-<div id="packageLicense" class="cc cc-by-nc-sa">
-<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 4.0</a></p>
+<article class="iDevice_wrapper UDLcontentIdevice em_iDevice" id="id162">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Ejercicios finales de la sección</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta162_133_2" class="block iDevice_content">
+<div class="exe-udlContent exe-udlContent-expression"><section class="exe-udlContent-block"><div class="exe-udlContent-content"><div class="exe-udlContent-content-main"><p><span style="color: #ff0000;"><strong>Ejercicio 22:</strong></span> Una carga de 50 N unida a un resorte que cuelga verticalmente estira dicho resorte 5 cm. El resorte se coloca ahora horizontalmente sobre una mesa y se estira 11 cm.</p>
+<ol style="list-style-type: lower-alpha;">
+<li>¿Qué fuerza se requiere para estirar el resorte esta cantidad?</li>
+<li>¿Qué trabajo se ha realizado? </li>
+</ol>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 23:</strong></span> Determina la velocidad angular de un disco de 1 kg de masa y 20 cm de radio que rota con eje en su centro de masa con una energía cinética de 800 J.</p>
+<p><span style="color: #ff0000;"><strong></strong></span></p>
+<p><span style="color: #ff0000;"><strong>Ejercicio 24:</strong></span> La temperatura de una barra de una determinada sustancia aumenta 15 °C cuando absorbe 1,5 kJ de calor. La masa de la barra es 600 g. Determina el calor específico de la sustancia.</p>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 25:</strong></span> Un ascensor debe subir una carga de 900 kg al sexto piso. Cada piso tiene una altura de 3 m. La velocidad de ascensión es de 1,6 m/s. La potencia consumida por el motor del elevador durante el ascenso de la carga es de 20 kW. Calcula, teniendo en cuenta solo la energía potencial necesaria:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>El trabajo realizado por el ascensor.</li>
+<li>La potencia útil del motor y su rendimiento. </li>
+</ol>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 26:</strong></span> Un motor de gasolina consume 15 litros de combustible por cada 100 kilómetros recorridos, y propulsa un automóvil que sube por una pendiente del 12 % a una velocidad de 60 km/h. Teniendo en cuenta que la capacidad calorífica del combustible es de 12 000 kcal/l, que la masa del automóvil es de 1 200 kg y que el diámetro de las ruedas es de 66 cm, calcula:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>El par de giro de cada rueda (Fr = 0).</li>
+<li>La velocidad de giro de las ruedas y la potencia útil desarrollada por el motor (Pu).</li>
+<li>El rendimiento del motor (η).</li>
+</ol>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 27:</strong> </span>Un motor de automóvil transmite una potencia de 82 CV al eje trasero, que finaliza en una rueda de 520 mm de diámetro. Cuando está subiendo una pendiente, el motor funciona a su máxima potencia y el indicador de velocidad marca 85 km/h. Calcula el momento de torsión en el árbol de la rueda.</p>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 28:</strong></span> Un motor de gasolina consume 17 l/h de gasolina cuyo poder calorífico es de 6 900 kcal/kg y cuya densidad es 0,55 kg/dm<sup>3</sup>. Si su rendimiento global es del 60 %, y gira a 8 500 rpm, calcula:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>La potencia que desarrolla el motor, expresada en unidades del SI.</li>
+<li>El par motor útil, expresado en unidades del SI.</li>
+<li>¿Qué se modifica si, mediante un reductor, conseguimos bajar las revoluciones a 250 rpm?</li>
+</ol>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 29:</strong></span> Un motor de combustión interna tiene un rendimiento total del 30 %, y consume 9 l/h de un combustible de poder calorífico 41 700 kJ/kg y densidad 0,85 kg/dm3, proporcionando un par de 50,76 Nm. Calcula:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>La masa de combustible consumida en un segundo (en gramos).</li>
+<li>La potencia útil (en kW).</li>
+<li>Las rpm a las que gira. </li>
+</ol>
+
+<p><span style="color: #ff0000;"><strong>Ejercicio 30:</strong></span> El motor de un automóvil de 1 500 kg de masa suministra una potencia de 100 CV, que se transmite a las dos ruedas motrices de 0,6 m de diámetro con un rendimiento de 90 %. En un determinado momento, el coche sube a velocidad constante por una pendiente del 12 %, con una fuerza constante de rozamiento de las ruedas sobre el suelo de 420 N. Calcula:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>La fuerza que debe ejercer el motor del coche.</li>
+<li>La velocidad de subida (en km/h).</li>
+<li>El par motor de cada rueda.</li>
+</ol></div></div></section></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice em_iDevice_assignment" id="id163">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Colección de problemas con soluciones</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta163_82" class="block iDevice_content">
+<p>En este archivo PDF tienes una colección de problemas con la solución para que trabajes en casa. Los que muestren mayor dificultad los corregiremos en clase.</p>
+</div>
+<ul class='exeFileList'><li><a href='EJERCICIOS PRINCIPIOS DE MAQUINAS.pdf' target='_blank'>EJERCICIOS PRINCIPIOS DE MÁQUINAS.pdf<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
 </div>
 </section>
 </div>
 <div id='bottomPagination'>
 <nav class="pagination noprt">
-<span class="page-counter">Página <strong>1</strong> de <strong>14</strong></span> <span class="sep">| </span><a href="1_introduccin_a_la_robtica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+<a href="trabajo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 </div>
